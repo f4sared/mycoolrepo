@@ -4,10 +4,10 @@ import pandas as pd
 
 #Graphs
 import matplotlib.pyplot as plt
-# import seaborn as sns
+import seaborn as sns
 
-# #Data exploration
-# import missingno as ms
+#Data exploration
+import missingno as ms
 
 #Web app
 import streamlit as st
@@ -15,8 +15,8 @@ import streamlit as st
 st.title("**Insurace Prediction**")
 st.write("Objective")
 
-# image = "https://www.w3schools.com/w3images/lights.jpg"
-# st.image(image, caption='Insurance')
+image = "https://www.w3schools.com/w3images/lights.jpg"
+st.image(image, caption='Insurance')
 
 # ## -----------
 # # READ DATA
