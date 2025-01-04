@@ -28,41 +28,41 @@ open('insurance.csv', 'wb').write(response.content)
 print('im done getting the data')
 #############
 
-# ## -----------
-# # READ DATA
-# ## -----------
-# insurance_df = pd.read_csv("insurance.csv")
+## -----------
+# READ DATA
+## -----------
+insurance_df = pd.read_csv("insurance.csv")
 
-# # First 5 observations
-# st.write(insurance_df.head())
+# First 5 observations
+st.write(insurance_df.head())
 
-# # Number of observations
-# rows = insurance_df.shape[0]
+# Number of observations
+rows = insurance_df.shape[0]
 
-# # Number of variables
-# columns = insurance_df.shape[1]
+# Number of variables
+columns = insurance_df.shape[1]
 
-# st.write("""
+st.write("""
 
-# #### Data dimensions
-# The data source has """ + str(rows) + """ observations and """ + str(columns) + """ variables.
+#### Data dimensions
+The data source has """ + str(rows) + """ observations and """ + str(columns) + """ variables.
 
-# #### Data description
-# - ***age***: The age of the client {""" + str(min(insurance_df["age"])) + """, """ + str(max(insurance_df["age"])) + """}.
+#### Data description
+- ***age***: The age of the client {""" + str(min(insurance_df["age"])) + """, """ + str(max(insurance_df["age"])) + """}.
 
-# - ***sex***: The gender of the client. { There are """ + str(insurance_df[insurance_df["sex"] == "male"]["age"].count()) + """ males and """ + str(insurance_df[insurance_df["sex"] == "female"]["age"].count()) + """ females}.
+- ***sex***: The gender of the client. { There are """ + str(insurance_df[insurance_df["sex"] == "male"]["age"].count()) + """ males and """ + str(insurance_df[insurance_df["sex"] == "female"]["age"].count()) + """ females}.
 
-# - ***bmi***: The bmi of the client {""" + str(min(insurance_df["bmi"])) + """, """ + str(max(insurance_df["bmi"])) + """}.
+- ***bmi***: The bmi of the client {""" + str(min(insurance_df["bmi"])) + """, """ + str(max(insurance_df["bmi"])) + """}.
 
-# - ***children***: The number of children a client has {""" + str(min(insurance_df["children"])) + """, """ + str(max(insurance_df["bmi"])) + """}.
+- ***children***: The number of children a client has {""" + str(min(insurance_df["children"])) + """, """ + str(max(insurance_df["bmi"])) + """}.
 
-# - ***smoker***: Whether the client smokes or not. { There are """ + str(insurance_df[insurance_df["smoker"] == "yes"]["smoker"].count()) + """ smokers and """ + str(insurance_df[insurance_df["smoker"] == "no"]["smoker"].count()) + """ non-smokers}.
+- ***smoker***: Whether the client smokes or not. { There are """ + str(insurance_df[insurance_df["smoker"] == "yes"]["smoker"].count()) + """ smokers and """ + str(insurance_df[insurance_df["smoker"] == "no"]["smoker"].count()) + """ non-smokers}.
 
-# - ***region***: The region where the client lives at. { There are """ + str(insurance_df[insurance_df["region"] == "southwest"]["region"].count()) + """ from the southwest, """ + str(insurance_df[insurance_df["region"] == "southeast"]["region"].count()) + """ from the southeast, """ + str(insurance_df[insurance_df["region"] == "northwest"]["region"].count()) + """ from the northwest, and """ + str(insurance_df[insurance_df["region"] == "northeast"]["region"].count()) + """ from the northeast}.
+- ***region***: The region where the client lives at. { There are """ + str(insurance_df[insurance_df["region"] == "southwest"]["region"].count()) + """ from the southwest, """ + str(insurance_df[insurance_df["region"] == "southeast"]["region"].count()) + """ from the southeast, """ + str(insurance_df[insurance_df["region"] == "northwest"]["region"].count()) + """ from the northwest, and """ + str(insurance_df[insurance_df["region"] == "northeast"]["region"].count()) + """ from the northeast}.
 
-# - ***charges***: The cost for the insurance {""" + str(round(min(insurance_df["charges"]),0)) + """, """ + str(round(max(insurance_df["charges"]),0)) + """}.
+- ***charges***: The cost for the insurance {""" + str(round(min(insurance_df["charges"]),0)) + """, """ + str(round(max(insurance_df["charges"]),0)) + """}.
 
-# """)
+""")
 
 # st.write("""
 # #### Graphs
