@@ -18,6 +18,16 @@ st.write("Objective")
 image = "https://www.w3schools.com/w3images/lights.jpg"
 st.image(image, caption='Insurance')
 
+#############
+# get the data
+print('start getting the data')
+import requests
+url = "https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv"
+response = requests.get(url)
+open('insurance.csv', 'wb').write(response.content)
+print('im done getting the data')
+#############
+
 # ## -----------
 # # READ DATA
 # ## -----------
