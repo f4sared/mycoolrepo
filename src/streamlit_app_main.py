@@ -64,39 +64,39 @@ The data source has """ + str(rows) + """ observations and """ + str(columns) + 
 
 """)
 
-# st.write("""
-# #### Graphs
+st.write("""
+#### Graphs
 
-# ##### Continous variables distributions
+##### Continous variables distributions
 
-# The first thing I want to be able to capture are the distributions of all the variables with the model that I will be creating. I also want to make sure that there is no need for that balancing strategies.
-# """)
+The first thing I want to be able to capture are the distributions of all the variables with the model that I will be creating. I also want to make sure that there is no need for that balancing strategies.
+""")
 
-# # Create a grid
-# col1, col2, col3 = st.columns(3)
+# Create a grid
+col1, col2, col3 = st.columns(3)
 
-# # Age distribution
-# with col1:
-#     st.write("Age Distribution")
-#     fig_age = plt.figure()
-#     plt.hist(insurance_df["age"], bins=20)
-#     st.pyplot(fig_age)
+# Age distribution
+with col1:
+    st.write("Age Distribution")
+    fig_age = plt.figure()
+    plt.hist(insurance_df["age"], bins=20)
+    st.pyplot(fig_age)
 
-# # BMI distribution
-# with col2:
-#     st.write("BMI Distribution")
-#     fig_bmi = plt.figure()
-#     plt.hist(insurance_df["bmi"], bins=20)
-#     st.pyplot(fig_bmi)
+# BMI distribution
+with col2:
+    st.write("BMI Distribution")
+    fig_bmi = plt.figure()
+    plt.hist(insurance_df["bmi"], bins=20)
+    st.pyplot(fig_bmi)
 
-# # Insurance charges distribution
-# with col3:
-#   st.write("Insurance Charges")
-#   fig_charges = plt.figure()
-#   plt.hist(insurance_df["charges"], bins=20)
-#   st.pyplot(fig_charges)
+# Insurance charges distribution
+with col3:
+  st.write("Insurance Charges")
+  fig_charges = plt.figure()
+  plt.hist(insurance_df["charges"], bins=20)
+  st.pyplot(fig_charges)
 
-# st.write("##### Discrete variables distributions")
+st.write("##### Discrete variables distributions")
 
 # # Create a grid
 # col1, col2 = st.columns(2)
