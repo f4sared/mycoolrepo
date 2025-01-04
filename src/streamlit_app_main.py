@@ -9,11 +9,11 @@ import pandas as pd
 # #Data exploration
 # import missingno as ms
 
-# #Web app
-# import streamlit as st
+#Web app
+import streamlit as st
 
-# st.title("**Insurace Prediction**")
-# st.write("Objective")
+st.title("**Insurace Prediction**")
+st.write("Objective")
 
 # image = "https://www.w3schools.com/w3images/lights.jpg"
 # st.image(image, caption='Insurance')
