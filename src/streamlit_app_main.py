@@ -2,8 +2,8 @@
 import numpy as np
 import pandas as pd
 
-# #Graphs
-# import matplotlib.pyplot as plt
+#Graphs
+import matplotlib.pyplot as plt
 # import seaborn as sns
 
 # #Data exploration
