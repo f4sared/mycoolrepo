@@ -172,38 +172,40 @@ insurance_df.drop(["region"], axis=1, inplace = True)
 
 st.write(insurance_df.head(5))
 
-# # -----------------------
-# # Linear correlation 
-# # -----------------------
+# -----------------------
+# Linear correlation 
+# -----------------------
 
-# # Calculate the correlation matrix
-# corr_matrix = insurance_df.corr()
+# Calculate the correlation matrix
+corr_matrix = insurance_df.corr()
 
-# # Create a heatmap of the correlation matrix
-# fig, ax = plt.subplots(figsize=(10, 8))
-# sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.5, ax=ax)
+# Create a heatmap of the correlation matrix
+fig, ax = plt.subplots(figsize=(10, 8))
+sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.5, ax=ax)
 
-# # Set the heatmap title
-# ax.set_title("Correlation Heatmap")
+# Set the heatmap title
+ax.set_title("Correlation Heatmap")
 
-# # Display the heatmap
-# st.pyplot(fig)
+# Display the heatmap
+st.pyplot(fig)
 
-# ## TRAIN AND TEST SPLIT
-# from sklearn.model_selection import train_test_split
-# y = insurance_df['charges']
-# X = insurance_df.drop(columns = ['charges'])
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
+## TRAIN AND TEST SPLIT
+from sklearn.model_selection import train_test_split
+y = insurance_df['charges']
+X = insurance_df.drop(columns = ['charges'])
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
 
-# y = insurance_df['charges']
-# X = insurance_df.drop(columns = ['charges'])
+y = insurance_df['charges']
+X = insurance_df.drop(columns = ['charges'])
 
-# train = pd.concat([y_train,  X_train], axis=1)
-# test = pd.concat([y_test, X_test], axis = 1)
+train = pd.concat([y_train,  X_train], axis=1)
+test = pd.concat([y_test, X_test], axis = 1)
 
-# ## LASS0
-# from sklearn.metrics import mean_squared_error, r2_score
-# from sklearn import linear_model
+## LASS0
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn import linear_model
+
+print('Done importing the packages')
 
 # reg = linear_model.Lasso(alpha=1)
 # reg.fit(X_train, y_train)
