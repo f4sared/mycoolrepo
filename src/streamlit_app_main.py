@@ -207,38 +207,38 @@ from sklearn import linear_model
 
 st.write('Done importing the packages, all works')
 
-# reg = linear_model.Lasso(alpha=1)
-# reg.fit(X_train, y_train)
+reg = linear_model.Lasso(alpha=1)
+reg.fit(X_train, y_train)
 
-# # PREDICTION
-# yhat = reg.predict(X_test)
-# r2 = r2_score(y_test, yhat)
-# st.write("Using an alpha value of 1, we get that the R^2 for the model is " + str(round(r2*100,3)))
+# PREDICTION
+yhat = reg.predict(X_test)
+r2 = r2_score(y_test, yhat)
+st.write("Using an alpha value of 1, we get that the R^2 for the model is " + str(round(r2*100,3)))
 
-# ## -----------
-# ## USER INPUT FEATURES
-# ## -----------
-# st.sidebar.header("What are you trying to predict?")
-# st.sidebar.write("**User input parameters**")
+## -----------
+## USER INPUT FEATURES
+## -----------
+st.sidebar.header("What are you trying to predict?")
+st.sidebar.write("**User input parameters**")
 
-# def user_input_features():
-#     age = st.sidebar.slider("Age", 18, 60, 30)
-#     sex = st.sidebar.selectbox("Sex", ("male", "female"))
-#     bmi = st.sidebar.slider("BMI", 15, 58, 30)
-#     children = st.sidebar.slider("Children", 0, 4, 2)
-#     smoker = st.sidebar.selectbox("Smoker", ("yes", "no"))
-#     region = st.sidebar.selectbox("Region", ("northwest", "southeast", "southwest", "northeast"))
+def user_input_features():
+    age = st.sidebar.slider("Age", 18, 60, 30)
+    sex = st.sidebar.selectbox("Sex", ("male", "female"))
+    bmi = st.sidebar.slider("BMI", 15, 58, 30)
+    children = st.sidebar.slider("Children", 0, 4, 2)
+    smoker = st.sidebar.selectbox("Smoker", ("yes", "no"))
+    region = st.sidebar.selectbox("Region", ("northwest", "southeast", "southwest", "northeast"))
 
-#     data = {"age": age,
-#             "sex": sex,
-#             "bmi": bmi,
-#             "children": children, 
-#             "smoker": smoker,
-#             "region": region}
+    data = {"age": age,
+            "sex": sex,
+            "bmi": bmi,
+            "children": children, 
+            "smoker": smoker,
+            "region": region}
 
-#     features = pd.DataFrame(data, index=[0])
+    features = pd.DataFrame(data, index=[0])
                                            
-#     return features
+    return features
 
 # df = user_input_features()
 
