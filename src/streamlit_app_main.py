@@ -1,3 +1,6 @@
+# https://medium.com/@andres.tellez/my-first-time-using-streamlit-building-a-simple-and-interactive-ml-app-44dd0a06fd98
+# https://storm.genie.stanford.edu/article/make-an-article-about-the-best-future-proof-jobs-in-singapore-market.-%0A-449464 
+
 #Data management
 import numpy as np
 import pandas as pd
