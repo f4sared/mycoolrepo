@@ -15,6 +15,7 @@ for message in st.session_state.messages:
 # React to user input
 if prompt := st.chat_input("What is up?"):
     # Display user message in chat message container
+    # without context
     st.chat_message("user").markdown(prompt)
     st.line_chart(np.random.randn(10, 1))
     # Add user message to chat history
@@ -22,6 +23,7 @@ if prompt := st.chat_input("What is up?"):
 
     response = f"Echo: {prompt}"
     # Display assistant response in chat message container
+    # with context
     with st.chat_message("assistant"):
         st.markdown(response)
         st.line_chart(np.random.randn(10, 1))
