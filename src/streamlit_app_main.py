@@ -1,6 +1,3 @@
-# https://medium.com/@andres.tellez/my-first-time-using-streamlit-building-a-simple-and-interactive-ml-app-44dd0a06fd98
-# https://storm.genie.stanford.edu/article/make-an-article-about-the-best-future-proof-jobs-in-singapore-market.-%0A-449464 
-
 #Data management
 import numpy as np
 import pandas as pd
@@ -101,79 +98,79 @@ with col3:
 
 st.write("##### Discrete variables distributions")
 
-# # Create a grid
-# col1, col2 = st.columns(2)
+# Create a grid
+col1, col2 = st.columns(2)
 
-# # Gender distribution
-# with col1:
-#     st.write("Gender Distribution")
-#     gender_counts = insurance_df["sex"].value_counts()
-#     st.bar_chart(gender_counts)
+# Gender distribution
+with col1:
+    st.write("Gender Distribution")
+    gender_counts = insurance_df["sex"].value_counts()
+    st.bar_chart(gender_counts)
 
-# # Number of children distribution
-# with col1:
-#     st.write("Number of Children Distribution")
-#     children_counts = insurance_df["children"].value_counts()
-#     st.bar_chart(children_counts)
+# Number of children distribution
+with col1:
+    st.write("Number of Children Distribution")
+    children_counts = insurance_df["children"].value_counts()
+    st.bar_chart(children_counts)
 
-# # Smoking status
-# with col2:
-#     st.write("Smoking Status")
-#     smoker_counts = insurance_df["smoker"].value_counts()
-#     st.bar_chart(smoker_counts)
+# Smoking status
+with col2:
+    st.write("Smoking Status")
+    smoker_counts = insurance_df["smoker"].value_counts()
+    st.bar_chart(smoker_counts)
 
-# # Region distribution
-# with col2:
-#     st.write("Region Distribution")
-#     region_counts = insurance_df["region"].value_counts()
-#     st.bar_chart(region_counts)
+# Region distribution
+with col2:
+    st.write("Region Distribution")
+    region_counts = insurance_df["region"].value_counts()
+    st.bar_chart(region_counts)
 
-# st.write("##### Relationship with charges")
+st.write("##### Relationship with charges")
 
-# # Display scatter plots between each variable and charges in a grid
-# variables = ["age", "sex", "bmi", "children", "smoker", "region"]
-# num_cols = 3
-# num_rows = len(variables) // num_cols + (len(variables) % num_cols > 0)
+# Display scatter plots between each variable and charges in a grid
+variables = ["age", "sex", "bmi", "children", "smoker", "region"]
+num_cols = 3
+num_rows = len(variables) // num_cols + (len(variables) % num_cols > 0)
 
-# fig, axes = plt.subplots(nrows=num_rows, ncols=num_cols, figsize=(12, 8))
-# fig.tight_layout(pad=5.0)
+fig, axes = plt.subplots(nrows=num_rows, ncols=num_cols, figsize=(12, 8))
+fig.tight_layout(pad=5.0)
 
-# for i, variable in enumerate(variables):
-#     row = i // num_cols
-#     col = i % num_cols
-#     ax = axes[row][col]
-#     sns.scatterplot(data=insurance_df, x=variable, y="charges", ax=ax)
-#     ax.set_title(f"Scatter Plot: {variable.capitalize()} vs Charges")
+for i, variable in enumerate(variables):
+    row = i // num_cols
+    col = i % num_cols
+    ax = axes[row][col]
+    sns.scatterplot(data=insurance_df, x=variable, y="charges", ax=ax)
+    ax.set_title(f"Scatter Plot: {variable.capitalize()} vs Charges")
 
-# st.pyplot(fig)
+st.pyplot(fig)
 
-# st.write("##### Box and whiskers plot")
+st.write("##### Box and whiskers plot")
 
-# # Select the categorical variables
-# categorical_columns = ["sex", "smoker", "region"]
+# Select the categorical variables
+categorical_columns = ["sex", "smoker", "region"]
 
-# # Create a grid for the box plots
-# col1, col2, col3 = st.columns(3)
+# Create a grid for the box plots
+col1, col2, col3 = st.columns(3)
 
-# # Create box plots for each categorical variable against charges in a grid
-# for i, column in enumerate(categorical_columns):
-#     with col1 if i % 3 == 0 else col2 if i % 3 == 1 else col3:
-#         st.write(f"Plot: {column.capitalize()} vs Charges")
-#         fig, ax = plt.subplots()
-#         sns.boxplot(data=insurance_df, x=column, y="charges")
-#         st.pyplot(fig)
+# Create box plots for each categorical variable against charges in a grid
+for i, column in enumerate(categorical_columns):
+    with col1 if i % 3 == 0 else col2 if i % 3 == 1 else col3:
+        st.write(f"Plot: {column.capitalize()} vs Charges")
+        fig, ax = plt.subplots()
+        sns.boxplot(data=insurance_df, x=column, y="charges")
+        st.pyplot(fig)
 
-# # Binary transformation
-# insurance_df['sex'] = insurance_df['sex'].apply(lambda x: 0 if x == 'female' else 1)
-# insurance_df['smoker'] = insurance_df['smoker'].apply(lambda x: 0 if x == 'no' else 1)
+# Binary transformation
+insurance_df['sex'] = insurance_df['sex'].apply(lambda x: 0 if x == 'female' else 1)
+insurance_df['smoker'] = insurance_df['smoker'].apply(lambda x: 0 if x == 'no' else 1)
 
-# # Multiclass transformation
-# region_dummies = pd.get_dummies(insurance_df['region'], drop_first = True)
+# Multiclass transformation
+region_dummies = pd.get_dummies(insurance_df['region'], drop_first = True)
 
-# insurance_df=pd.concat([insurance_df, region_dummies], axis=1)
-# insurance_df.drop(["region"], axis=1, inplace = True)
+insurance_df=pd.concat([insurance_df, region_dummies], axis=1)
+insurance_df.drop(["region"], axis=1, inplace = True)
 
-# st.write(insurance_df.head(5))
+st.write(insurance_df.head(5))
 
 # # -----------------------
 # # Linear correlation 
