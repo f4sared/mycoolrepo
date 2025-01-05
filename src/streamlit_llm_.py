@@ -18,7 +18,7 @@ for message in st.session_state.messages:
 def response_generator():
     response = random.choice(
         [
-            "Hello there! How can I assist you today?",
+            "Hello there! How can I assist you todays?",
             "Hi, human! Is there anything I can help you with?",
             "Do you need help?",
         ]
