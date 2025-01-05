@@ -1,4 +1,5 @@
 import streamlit as st
+import numpy as np
 
 st.title("Echo Bot")
 
@@ -22,5 +23,6 @@ if prompt := st.chat_input("What is up?"):
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         st.markdown(response)
+        st.line_chart(np.random.randn(30, 3))
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
