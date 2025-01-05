@@ -205,7 +205,7 @@ test = pd.concat([y_test, X_test], axis = 1)
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn import linear_model
 
-print('Done importing the packages')
+print('Done importing the packages, all works')
 
 # reg = linear_model.Lasso(alpha=1)
 # reg.fit(X_train, y_train)
