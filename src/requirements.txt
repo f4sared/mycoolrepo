@@ -6,3 +6,4 @@ missingno
 streamlit
 requests
 scikit-learn
+openai

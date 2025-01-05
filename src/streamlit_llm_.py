@@ -1,4 +1,5 @@
 import streamlit as st
+from openai import OpenAI
 import numpy as np
 import random
 import time
@@ -17,7 +18,7 @@ def response_generator():
         time.sleep(0.10)
 
 
-st.title("Simple chat")
+st.title("ChatGPT-like clone")
 
 # Initialize chat history
 if "messages" not in st.session_state:
