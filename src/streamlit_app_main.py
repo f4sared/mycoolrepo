@@ -240,18 +240,18 @@ def user_input_features():
                                            
     return features
 
-# df = user_input_features()
+df = user_input_features()
 
-# df['sex'] = df['sex'].apply(lambda x: 0 if x == 'female' else 1)
-# df['smoker'] = df['smoker'].apply(lambda x: 0 if x == 'no' else 1)
+df['sex'] = df['sex'].apply(lambda x: 0 if x == 'female' else 1)
+df['smoker'] = df['smoker'].apply(lambda x: 0 if x == 'no' else 1)
 
-# df['northwest'] = df['region'].apply(lambda x: 1 if x == 'northwest' else 0)
-# df['southeast'] = df['region'].apply(lambda x: 1 if x == 'southeast' else 0)
-# df['southwest'] = df['region'].apply(lambda x: 1 if x == 'southwest' else 0)
+df['northwest'] = df['region'].apply(lambda x: 1 if x == 'northwest' else 0)
+df['southeast'] = df['region'].apply(lambda x: 1 if x == 'southeast' else 0)
+df['southwest'] = df['region'].apply(lambda x: 1 if x == 'southwest' else 0)
 
-# df.drop(["region"], axis=1, inplace = True)
+df.drop(["region"], axis=1, inplace = True)
 
-# st.write("**You have selected the following parameters:**")
-# st.write(df)
+st.write("**You have selected the following parameters:**")
+st.write(df)
 
-# st.write("Given the inputed parameter, the insuracnce charge would be: $" + str(round(reg.predict(df)[0],2)))
+st.write("Given the inputed parameter, the insuracnce charge would be: $" + str(round(reg.predict(df)[0],2)))
